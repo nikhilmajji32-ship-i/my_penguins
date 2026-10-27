@@ -1,0 +1,29 @@
+---
+title: "SDS 313 Nikhil Majji"
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+```{r}
+
+library(tidyverse)
+install.packages("palmerpenguins")
+library(palmerpenguins)
+glimpse(penguins)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
