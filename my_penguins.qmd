@@ -9,21 +9,31 @@ Quarto enables you to weave together content and executable code into a finished
 ```{r}
 
 library(tidyverse)
-install.packages("palmerpenguins")
 library(palmerpenguins)
 glimpse(penguins)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 ```
+## Average bill length by species
+
+```{r}
+bill_summary <- penguins |>
+  group_by(species) |>
+  summarize(avg_bill_length = mean(bill_length_mm, na.rm = TRUE))
+
+bill_summary
+```
+
+
+## Plot of average bill length
+
+```{r}
+ggplot(bill_summary, aes(x = species, y = avg_bill_length)) +
+  geom_col() +
+  labs(
+    title = "Average Bill Length by Species",
+    x = "Species",
+    y = "Average bill length (mm)"
+  )
+```
+
+
